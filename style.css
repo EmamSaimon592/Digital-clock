@@ -1,0 +1,107 @@
+:root{
+  --bg: #0f1220;
+  --fg: #eaf2ff;
+  --muted: #a5b3d6;
+  --accent: #6aa5ff;
+  --card: #151a2e;
+  --shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--fg);
+  background: radial-gradient(1200px 800px at 70% -10%, #243157 0%, var(--bg) 55%);
+  display:grid;
+  place-items:center;
+}
+
+.wrap{
+  width:min(720px, 92vw);
+  background: var(--card);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:10px;
+}
+h1{
+  font-size: clamp(18px, 2.2vw, 22px);
+  margin:0;
+  color: var(--muted);
+  font-weight:600;
+  letter-spacing:.4px;
+}
+
+.controls{
+  display:flex; gap:8px;
+}
+button{
+  border:none;
+  background:#222a46;
+  color:var(--fg);
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+  transition: transform .06s ease, background .2s ease, opacity .2s ease;
+}
+button:hover{ transform: translateY(-1px); }
+button[aria-pressed="true"]{ background: var(--accent); color:#081325; }
+
+.clock{
+  text-align:center;
+  padding: 34px 12px 22px;
+}
+.time{
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: clamp(44px, 10vw, 92px);
+  line-height:1.05;
+}
+.colon{
+  opacity:.85;
+  animation: blink 1s steps(1, end) infinite;
+}
+@keyframes blink { 50% { opacity:.25; } }
+
+.ampm{
+  margin-left: 10px;
+  font-size: clamp(14px, 2.5vw, 20px);
+  color: var(--accent);
+  vertical-align: middle;
+}
+
+.date{
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: clamp(14px, 2.2vw, 18px);
+}
+
+.footer{
+  margin-top: 10px;
+  text-align:center;
+  color: #7e8bb7;
+  font-size: 12px;
+}
+
+/* Light theme */
+body.light{
+  --bg: #f4f7ff;
+  --fg: #0f1220;
+  --muted: #4a577a;
+  --accent: #2e64ff;
+  --card: #ffffff;
+  background: radial-gradient(1200px 800px at 70% -10%, #e8efff 0%, var(--bg) 55%);
+}
+body.light button{ background:#e7ebfb; color:#102040; }
+body.light button[aria-pressed="true"]{ color:#fff; }

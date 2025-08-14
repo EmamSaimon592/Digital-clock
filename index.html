@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Clock</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <h1>Digital Clock</h1>
+      <div class="controls">
+        <button id="toggle-format" aria-pressed="false">24h</button>
+        <button id="toggle-theme" aria-pressed="false" title="Toggle theme">🌓</button>
+      </div>
+    </header>
+
+    <section class="clock" aria-live="polite">
+      <div class="time">
+        <span id="hours">00</span><span class="colon">:</span>
+        <span id="minutes">00</span><span class="colon">:</span>
+        <span id="seconds">00</span>
+        <span id="ampm" class="ampm"></span>
+      </div>
+      <div class="date">
+        <span id="weekday">Monday</span>,
+        <span id="month">January</span>
+        <span id="day">1</span>,
+        <span id="year">1970</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Made with HTML • CSS • JS</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
